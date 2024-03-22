@@ -1,29 +1,30 @@
 package swingPackage;
 
-public class User extends Person{
+import java.util.List;
 
-	String password;
-	private Film[] filmsInTheList;
-	
-	public User(String name) {
-		super(name);
-		filmsInTheList = new Film[10];
-	}
+public class User extends Person {
 
-	public String getPassword() {
-		return password;
-	}
+    private String password;
+    private List<Film> filmsInTheList;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
+    public User(String name) {
+        super(name);
+    }
 
-	public Film[] getFilmsInTheList() {
-		return filmsInTheList;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setFilmsInTheList(Film[] filmsInTheList) {
-		this.filmsInTheList = filmsInTheList;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Film> getFilmsInTheList() {
+        return filmsInTheList;
+    }
+
+    public void setFilmsInTheList(List<Film> filmsInTheList) {
+        this.filmsInTheList = filmsInTheList;
+    }
+
 }
