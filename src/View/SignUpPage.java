@@ -1,10 +1,15 @@
-package swingPackage;
+package View;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Model.Person;
+import Model.User;
+import Model.Users;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -40,7 +45,7 @@ public class SignUpPage extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SignUpPage(UserList userlist) {
+	public SignUpPage(Users userlist) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

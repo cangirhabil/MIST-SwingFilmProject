@@ -1,13 +1,12 @@
-package swingPackage;
+package Model;
 
 import java.util.ArrayList;
 
-public class UserList {
+public class Users {
 	public ArrayList<Person> users = new ArrayList<>();
 	
 	public Person addUser(Person user) {
 		users.add(user);
-		
 		return user;
 	}
 	

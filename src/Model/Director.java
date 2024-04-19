@@ -1,4 +1,4 @@
-package swingPackage;
+package Model;
 
 import java.util.List;
 
@@ -20,7 +20,5 @@ public class Director {
 	public void setFilms(List<Film> films) {
 		this.films = films;
 	}
-
-    
 }
 

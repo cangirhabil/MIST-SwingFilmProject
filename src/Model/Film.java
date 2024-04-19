@@ -1,4 +1,4 @@
-package swingPackage;
+package Model;
 
 public class Film {
 	private String title;		//same cell A
@@ -124,6 +124,7 @@ public class Film {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	
 	
 }

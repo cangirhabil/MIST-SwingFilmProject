@@ -1,16 +1,23 @@
-package swingPackage;
+package View;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Model.User;
+import Model.Users;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.desktop.UserSessionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 
 public class DemoFrame extends JFrame {
@@ -20,15 +27,20 @@ public class DemoFrame extends JFrame {
 	private JTextField txtfldUsername;
 	private JLabel lblPassword;
 	private JTextField txtfldPassword;
+	String userName;
+	boolean isLogIn;
+	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		
-		//User[] users = new User[2];
 		
-		UserList userlist = new UserList();
+		
+		System.out.print("Started");
+		
+		Users userlist = new Users();
 		User demo = new User("Demo User");
 		demo.setPassword("password");
 		
@@ -51,7 +63,7 @@ public class DemoFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DemoFrame(UserList userlist) {
+	public DemoFrame(Users userlist) {
 		//String name = "Tunahan";
 		//String password = "lmaoxd";
 		
@@ -110,7 +122,8 @@ public class DemoFrame extends JFrame {
 							if(user.getPassword().equals(enteredPassword)) {
 								lblError.setText("Login successful.");
 								userExists = true;
-								
+								userName = enteredName;
+								isLogIn = true;
 								NavigationPage np = new NavigationPage(enteredName, userlist);
 								np.show();
 								dispose();
@@ -118,9 +131,11 @@ public class DemoFrame extends JFrame {
 							else {
 								lblError.setText("Wrong password.");
 								userExists = true;
+								isLogIn = false;
 								break;
 							}
 						}
+						isLogIn = false;
 					}
 					
 					if(!userExists) {

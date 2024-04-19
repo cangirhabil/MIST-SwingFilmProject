@@ -1,4 +1,4 @@
-package swingPackage;
+package Model;
 
 public class Person {
 	private String name;

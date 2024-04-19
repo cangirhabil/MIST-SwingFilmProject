@@ -1,10 +1,14 @@
-package swingPackage;
+package View;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Model.Film;
+import Model.Users;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTabbedPane;
@@ -66,7 +70,7 @@ public class NavigationPage extends JFrame {
 	 * Create the frame.
 	 * @param enteredName 
 	 */
-	public NavigationPage(String enteredName ,UserList userlist) {
+	public NavigationPage(String enteredName ,Users userlist) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 767, 531);
 		contentPane = new JPanel();

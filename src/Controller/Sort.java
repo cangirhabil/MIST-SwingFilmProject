@@ -1,4 +1,4 @@
-package swingPackage;
+package Controller;
 
 
 public class Sort<T extends Comparable<T>> {
@@ -54,7 +54,7 @@ public class Sort<T extends Comparable<T>> {
             k++;
         }
     }
-
+/*
     public static void main(String[] args) {
         Sort<Integer> mergeSort = new Sort<>();
         Integer[] arr = {5, 3, 9, 1, 7, 2, 8, 4, 6};
@@ -64,4 +64,5 @@ public class Sort<T extends Comparable<T>> {
             System.out.println(num);
         }
     }
+*/
 }

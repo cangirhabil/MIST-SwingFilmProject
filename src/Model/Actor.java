@@ -1,4 +1,4 @@
-package swingPackage;
+package Model;
 
 import java.util.List;
 
