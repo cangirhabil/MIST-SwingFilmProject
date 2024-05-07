@@ -90,7 +90,7 @@ public class SignUpPage extends JFrame {
 		JButton btnBack = new JButton("Go back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DemoFrame df = new DemoFrame(userlist);			
+				MainFrame df = new MainFrame(userlist);			
 				df.show();
 				dispose();
 			}
@@ -122,7 +122,7 @@ public class SignUpPage extends JFrame {
 					
 					userlist.addUser(user);
 					
-					DemoFrame df = new DemoFrame(userlist);			
+					MainFrame df = new MainFrame(userlist);			
 					df.show();
 					dispose();
 				}

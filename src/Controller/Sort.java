@@ -1,6 +1,5 @@
 package Controller;
 
-
 public class Sort<T extends Comparable<T>> {
 	
     public void sort(T[] arr) {
@@ -23,8 +22,10 @@ public class Sort<T extends Comparable<T>> {
         int n1 = middle - left + 1;
         int n2 = right - middle;
 
-        T[] leftArray = (T[]) new Comparable[n1];
-        T[] rightArray = (T[]) new Comparable[n2];
+        @SuppressWarnings("unchecked")
+		T[] leftArray = (T[]) new Comparable[n1];
+        @SuppressWarnings("unchecked")
+		T[] rightArray = (T[]) new Comparable[n2];
 
         System.arraycopy(arr, left, leftArray, 0, n1);
         System.arraycopy(arr, middle + 1, rightArray, 0, n2);
@@ -54,6 +55,10 @@ public class Sort<T extends Comparable<T>> {
             k++;
         }
     }
+    
+
+    
+    
 /*
     public static void main(String[] args) {
         Sort<Integer> mergeSort = new Sort<>();

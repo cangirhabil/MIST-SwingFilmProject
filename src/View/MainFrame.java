@@ -13,14 +13,10 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.desktop.UserSessionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.awt.event.ActionEvent;
 
-public class DemoFrame extends JFrame {
+public class MainFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -40,18 +36,15 @@ public class DemoFrame extends JFrame {
 		
 		System.out.print("Started");
 		
-		Users userlist = new Users();
+		Users users = new Users();
 		User demo = new User("Demo User");
 		demo.setPassword("password");
-		
-		
-
-		userlist.addUser(demo);
+		users.addUser(demo);
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DemoFrame frame = new DemoFrame(userlist);
+					MainFrame frame = new MainFrame(users);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -63,11 +56,11 @@ public class DemoFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DemoFrame(Users userlist) {
+	public MainFrame(Users users) {
 		//String name = "Tunahan";
 		//String password = "lmaoxd";
 		
-		setTitle("demo");
+		setTitle("MIST CINEMA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 434, 350);
 		contentPane = new JPanel();
@@ -111,20 +104,20 @@ public class DemoFrame extends JFrame {
 				
 				String enteredPassword = txtfldPassword.getText();
 				
-				if(userlist.isEmpty()) {
+				if(users.isEmpty()) {
 					lblError.setText("User does not exist.");
 				}
 				else {
 					boolean userExists = false;
-					for(int i = 0; i < userlist.getSize(); i++) {
-						if(userlist.getUsername(i).equals(enteredName)) {
-							User user = (User) userlist.getUser(i);
+					for(int i = 0; i < users.getSize(); i++) {
+						if(users.getUsername(i).equals(enteredName)) {
+							User user = (User) users.getUser(i);
 							if(user.getPassword().equals(enteredPassword)) {
 								lblError.setText("Login successful.");
 								userExists = true;
 								userName = enteredName;
 								isLogIn = true;
-								NavigationPage np = new NavigationPage(enteredName, userlist);
+								NavigationPage np = new NavigationPage(enteredName, users);
 								np.show();
 								dispose();
 							}
@@ -150,7 +143,7 @@ public class DemoFrame extends JFrame {
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SignUpPage su = new SignUpPage(userlist);
+				SignUpPage su = new SignUpPage(users);
 				su.show();
 				
 				dispose();

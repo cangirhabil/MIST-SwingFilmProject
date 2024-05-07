@@ -1,23 +1,20 @@
 package Model;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class Director {
-    private String name;
-    private List<Film> films;
-    
-    
-    
-	public String getName() {
-		return name;
+public class Director extends Person {
+
+    private ArrayList<Film> films;
+	
+    public Director(String name) {
+		super(name);
+		this.films = new ArrayList<Film>();
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public List<Film> getFilms() {
+
+	public ArrayList<Film> getFilms() {
 		return films;
 	}
-	public void setFilms(List<Film> films) {
+	public void setFilms(ArrayList<Film> films) {
 		this.films = films;
 	}
 }

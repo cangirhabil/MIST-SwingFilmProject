@@ -144,7 +144,7 @@ public class NavigationPage extends JFrame {
 		btnNewButton_3.setBounds(10, 440, 89, 23);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DemoFrame df = new DemoFrame(userlist);			
+				MainFrame df = new MainFrame(userlist);			
 				df.show();
 				dispose();
 			}

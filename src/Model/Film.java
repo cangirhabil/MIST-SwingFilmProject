@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Film {
 	private String title;		//same cell A
 	private String releaseDate;	//same cell A
@@ -9,12 +11,12 @@ public class Film {
 	private float rate;
 	private int metascore;
 	private String description;
-	private String director;	//same cell B
-	private String[] stars;		//same cell B
+	private Director director;	//same cell B
+	private ArrayList<Star> stars;		//same cell B
 	private int voteCount;		//same cell C
 	private int grossRevenue;	//same cell C
 	
-	public Film(String title, String releaseDate, String certificate, int duration, String genre, float rate, int metascore, String description, String director, String[] stars, int voteCount, int grossRevenue) {
+	public Film(String title, String releaseDate, String certificate, int duration, String genre, float rate, int metascore, String description, Director director, ArrayList<Star> stars, int voteCount, int grossRevenue) {
 		this.title = title;
 		this.releaseDate = releaseDate;
 		this.certificate = certificate;
@@ -25,6 +27,22 @@ public class Film {
 		this.description = description;
 		this.director = director;
 		this.stars = stars;
+		this.voteCount = voteCount;
+		this.grossRevenue = grossRevenue;
+	}
+	
+	//overload to add film in films of stars and directors
+	public Film(String title, String releaseDate, String certificate, int duration, String genre, float rate, int metascore, String description, int voteCount, int grossRevenue) {
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.certificate = certificate;
+		this.duration = duration;
+		this.genre = genre;
+		this.rate = rate;
+		this.metascore = metascore;
+		this.description = description;
+		this.director = null;
+		this.stars = null;
 		this.voteCount = voteCount;
 		this.grossRevenue = grossRevenue;
 	}
@@ -69,19 +87,19 @@ public class Film {
 		this.certificate = certificate;
 	}
 
-	public String getDirector() {
+	public Director getDirector() {
 		return director;
 	}
 
-	public void setDirector(String director) {
+	public void setDirector(Director director) {
 		this.director = director;
 	}
 
-	public String[] getStars() {
+	public ArrayList<Star> getStars() {
 		return stars;
 	}
 	
-	public void setStars(String[] stars) {
+	public void setStars(ArrayList<Star> stars) {
 		this.stars = stars;
 	}
 
